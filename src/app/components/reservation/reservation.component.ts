@@ -10,6 +10,8 @@ export class ReservationComponent {
   reservation:any
   person:any|null
   editRes:any|null
+  page:number = 1
+  resource:any|null
   constructor(private http:HttpClient) {
     this.http
       .get("http://localhost:9090/reservation-service/reservations/all")
@@ -26,18 +28,8 @@ export class ReservationComponent {
       )
   }
 
-  showPerson(id:number) {
-    this.http.get("http://localhost:9090/reservation-service/person/"+id)
-      .subscribe(
-        {
-          next: value => {
-            this.person=value
-          },
-          error: err => {
-            console.log(err)
-          }
-        }
-      )
+  showPerson(person:any) {
+    this.person = person
   }
 
   deleteReservation(id:number) {
@@ -58,5 +50,10 @@ export class ReservationComponent {
   editReservation(r: any) {
     this.editRes = r
     console.log(this.editRes)
+  }
+
+  showResource(resource: any) {
+    this.resource= resource
+
   }
 }

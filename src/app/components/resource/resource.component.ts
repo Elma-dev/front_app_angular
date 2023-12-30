@@ -9,6 +9,7 @@ import {HttpClient} from "@angular/common/http";
 export class ResourceComponent {
 
   resources:any
+  page:number = 1;
   constructor(private http:HttpClient) {
     this.http
       .get("http://localhost:9090/resource-service/all")
@@ -25,4 +26,22 @@ export class ResourceComponent {
       )
   }
 
+  deleteResource(idResource:number) {
+    this.http.delete("http://localhost:9090/resource-service/delete/"+idResource)
+      .subscribe(
+        {
+          next: value => {
+            window.location.reload()
+          },
+          error: err => {
+            console.log(err)
+          }
+        }
+      )
+
+  }
+
+  editResource(resource: any) {
+    
+  }
 }

@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ResourceComponent } from './components/resource/resource.component';
 import {HttpClientModule} from "@angular/common/http";
+import {NgxPaginationModule} from "ngx-pagination";
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReservationComponent,
-    ResourceComponent
+    ResourceComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
