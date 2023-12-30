@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fron_app:build:production"
+              "buildTarget": "fron_app:build:production"
             },
             "development": {
-              "browserTarget": "fron_app:build:development"
+              "buildTarget": "fron_app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fron_app:build"
+            "buildTarget": "fron_app:build"
           }
         },
         "test": {
